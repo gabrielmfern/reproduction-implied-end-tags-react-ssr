@@ -31,11 +31,8 @@ app.get('/', (res) => {
         </p>
         <div>...</div>
         Text in between paragraphs
-        <p>
-        </p>
-      </...
-
-      Which
+        <p></p>
+      </...>
     */
     await s.pipe(readable);
   });
