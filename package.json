@@ -20,6 +20,5 @@
     "express": "4.21.2",
     "react": "19.0.0",
     "react-dom": "19.0.0"
-  },
-  "packageManager": "bun@1.1.43"
+  }
 }
