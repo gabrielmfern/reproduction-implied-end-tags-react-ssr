@@ -7,42 +7,35 @@ const app = new Hono();
 app.get('/', (res) => {
   return stream(res, async (s) => {
     const readable = await renderToReadableStream(
-      <table>
-        <tbody>
-          <tr>
-            {/* This is the td that should have an implicit end tag */}
-            <td>
-              <td>
-                This is the inner content
-              </td>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <p>
+        First
+        <div>...</div>
+        Text in between paragraphs
+      </p>
     );
 
     /*
-      The HTML output is
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <td>This is the inner content</td>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      If you were to directly curl into http://localhost:3000 you would get
+
+      <p>
+        First
+        <div>...</div>
+        Text in between paragraphs
+      </p>
 
       Once it gets to the browser, it gets modified to
-      <table>
-        <tbody>
-          <tr>
-            <td>
-            </td>
-            <td>This is the inner content</td>
-          </tr>
-        </tbody>
-      </table>
+
+      <...>
+        <p>
+          First
+        </p>
+        <div>...</div>
+        Text in between paragraphs
+        <p>
+        </p>
+      </...
+
+      Which
     */
     await s.pipe(readable);
   });
