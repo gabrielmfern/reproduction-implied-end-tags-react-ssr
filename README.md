@@ -1,15 +1,7 @@
-# reproduction-implied-end-tags-react-ssr
+# Steps to reproduce
 
-To install dependencies:
+1. Install dependencies `npm install`
+2. Run with `npm start` or `tsx .`
+3. Open http://localhost:3000
+4. See rendering different from actual HTML
 
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.42. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
